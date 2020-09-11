@@ -8,6 +8,6 @@ jobs:
                                 - "83:12:6b:8e:6f:e2:93:4f:2a:0f:eb:f2:9b:01:c4:7f"
                 - checkout
                 - run: docker login -u $DOCKER_USER -p $DOCKER_PASS
-                - run: docker build -t lhildebrandt/hola-docker:$CIRCLE_SHA1 .
-                - run: docker push lhildebrandt/hola-docker:$CIRCLE_SHA1
+                - run: docker build -t lhildebrandt1989/hola-docker:$CIRCLE_SHA1 .
+                - run: docker push lhildebrandt1989/hola-docker:$CIRCLE_SHA1
                 - run: ssh -o StrictHostKeyChecking=no root@ec2-18-228-222-194.sa-east-1.compute.amazonaws.com "/bin/bash /root/docker/deploy.sh $CIRCLE_SHA1"
